@@ -1,4 +1,4 @@
-package LinkedList;
+package linkedList;
 
 public class LinkedList<E> {
     private class Node{
@@ -83,4 +83,6 @@ public class LinkedList<E> {
     public void addLast(E e) {
         add(size, e);
     }
+
+
 }
