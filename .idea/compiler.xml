@@ -16,10 +16,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Algorithm" />
         <module name="interview-questions" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Algorithm" target="1.5" />
       <module name="interview-questions" target="1.8" />
     </bytecodeTargetLevel>
   </component>
