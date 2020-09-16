@@ -17,11 +17,28 @@ public class ValidAnagram {
         }
 
         // 解法一 排序
-        char[] sarr = s.toCharArray();
-        char[] tarr = t.toCharArray();
-        Arrays.sort(sarr);
-        Arrays.sort(tarr);
-        return Arrays.equals(sarr, tarr);
+//        char[] sarr = s.toCharArray();
+//        char[] tarr = t.toCharArray();
+//        Arrays.sort(sarr);
+//        Arrays.sort(tarr);
+//        return Arrays.equals(sarr, tarr);
+
+        // 解法二 hash
+
+        int [] counter = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            counter[s.charAt(i) - 'a']++;
+            counter[t.charAt(i) - 'a']--;
+        }
+
+        for (int i : counter) {
+            if (i != 0) {
+                return false;
+            }
+        }
+        return true;
+
     }
 
 
