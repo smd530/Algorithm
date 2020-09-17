@@ -13,15 +13,20 @@ import java.util.List;
  */
 public class BinaryTreeInorderTraversal {
 
-    public List<Integer> inorderTraversalRecursive(TreeNode root) {
-        if (root == null) {
-            return new ArrayList<Integer>();
-        }
+    public List<Integer> inorderTraversal(TreeNode root) {
 
-        List<Integer> left = inorderTraversalRecursive(root.left);
-        List<Integer> right = inorderTraversalRecursive(root.right);
-        left.add(root.val);
-        right.addAll(left);
-        return left;
+        // 方式一 递归
+        List<Integer> res = new ArrayList<Integer>();
+        inorderTraversalRecursive(root, res);
+        return res;
+    }
+
+    public void inorderTraversalRecursive(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversalRecursive(root.left, res);
+        res.add(root.val);
+        inorderTraversalRecursive(root.right, res);
     }
 }
