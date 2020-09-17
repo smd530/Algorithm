@@ -1,3 +1,3 @@
 ## 优秀
-  ![头像](http://img.tomato530.com/%E5%A4%B4%E5%83%8F.jpeg)
+  ![](img.tomato530.com/英杰.jpeg)
   干就完了 奥利给....
