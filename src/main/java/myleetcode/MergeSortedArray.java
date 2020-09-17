@@ -6,7 +6,7 @@ package myleetcode;
  * @author shanmingda
  * @date 2020-09-13 23:16
  */
-public class mergeSortedArray {
+public class MergeSortedArray {
 
     public void mergeSortedArray(int[] nums1, int m, int[] nums2, int n) {
         int i = m - 1, j = n - 1, k = m + n - 1;

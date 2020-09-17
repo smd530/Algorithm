@@ -6,7 +6,7 @@ import basicdatastructure.ListNode;
  * @author shanmingda
  * @date 2020-09-13 23:07
  */
-public class mergeTwoLists {
+public class MergeTwoLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0), p = dummy;
