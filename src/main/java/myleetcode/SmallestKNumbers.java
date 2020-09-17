@@ -1,6 +1,7 @@
 package myleetcode;
 
 import java.util.Arrays;
+import java.util.PriorityQueue;
 
 /**
  * 最小的k个数 剑指40
@@ -10,31 +11,36 @@ import java.util.Arrays;
  */
 public class SmallestKNumbers {
 
-    // 解法一 暴力 遍历 申请大小为k的新数组 将arr排序 将arr前k个元素塞进新数组
 
-    public static int[] getLeastNumbers(int[] arr, int k) {
-
-        Arrays.sort(arr);
+    public int[] getLeastNumbers(int[] arr, int k) {
+        // 解法一 暴力 遍历 申请大小为k的新数组 将arr排序 将arr前k个元素塞进新数组
         int[] resArr = new int[k];
+//        Arrays.sort(arr);
+
+//        for (int i = 0; i < arr.length; i++) {
+//            if (i == k) {
+//                break;
+//            }
+//            resArr[i] = arr[i];
+//        }
+//        return resArr;
+
+        // 解法二 堆
+        PriorityQueue heap = new PriorityQueue();
 
         for (int i = 0; i < arr.length; i++) {
-            if (i == k) {
-                break;
-            }
-            resArr[i] = arr[i];
+            heap.add(arr[i]);
+        }
+        for (int i = 0; i < k; i++) {
+            resArr[i] = (Integer) heap.poll();
         }
         return resArr;
+
+
+
     }
 
-    public static void main(String[] args) {
-        int [] arr = {2,3,4,5,9,7,1};
-        int k = 3;
 
-        int[] numbers = getLeastNumbers(arr, k);
-        for (int number : numbers) {
-            System.out.println(number);
-        }
-    }
 
 
 }
