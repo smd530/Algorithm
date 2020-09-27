@@ -9,7 +9,6 @@ import java.util.PriorityQueue;
  * 前K个高频元素 leetcode 347
  *
  * @author shanmingda
- * @date 2020-09-19 23:06
  */
 public class TopkFrequentElements {
 
@@ -19,11 +18,9 @@ public class TopkFrequentElements {
             occurrences.put(num, occurrences.getOrDefault(num, 0) + 1);
         }
 
-        PriorityQueue<int[]> queue = new PriorityQueue<int[]>(new Comparator<int[]>() {
-            @Override
-            public int compare(int[] m, int[] n) {
-                return m[1] - n[1];
-            }
+        PriorityQueue<int[]> queue = new PriorityQueue<int[]>((int[] m, int[] n) -> {
+            return m[1] - n[1];
+
         });
         for (Map.Entry<Integer, Integer> entry : occurrences.entrySet()) {
             int num = entry.getKey(), count = entry.getValue();
