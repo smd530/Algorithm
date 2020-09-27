@@ -6,7 +6,6 @@ import basicdatastructure.TreeNode;
  * 验证二叉搜索树 leetcode 98
  *
  * @author shanmingda
- * @date 2020-09-27 17:42
  */
 public class ValidateBinarySearchTree {
 

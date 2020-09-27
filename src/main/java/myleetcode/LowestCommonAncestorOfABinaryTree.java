@@ -6,7 +6,6 @@ import basicdatastructure.TreeNode;
  * 二叉树的最近公共祖先 leetcode 236
  *
  * @author shanmingda
- * @date 2020-09-27 23:05
  */
 public class LowestCommonAncestorOfABinaryTree {
 
