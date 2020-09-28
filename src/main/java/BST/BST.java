@@ -1,5 +1,7 @@
 package BST;
 
+import com.sun.org.apache.regexp.internal.RE;
+
 /**
  * 二分搜索树
  * 存储的元素必须要有可比较性 所以要继承Comparable接口
@@ -72,12 +74,41 @@ public class BST<E extends Comparable<E>> {
             return new Node(e);
         }
 
-        if (e.compareTo(e) < 0) {
+        if (e.compareTo(node.e) < 0) {
             node.left = add(node.left, e);
-        } else if (e.compareTo(e) > 0) {
+        } else if (e.compareTo(node.e) > 0) {
             node.right = add(node.right, e);
         }
 
         return node;
+    }
+
+    /**
+     * 查看二分搜索树是否包含元素e
+     * @param e
+     * @return
+     */
+    public boolean contains(E e) {
+
+        return contains(root, e);
+    }
+
+    /**
+     * 查看以node为根的二分搜索树中是否包含元素e 递归算法
+     * @param node
+     * @param e
+     * @return
+     */
+    private boolean contains(Node node, E e) {
+        if (node == null) {
+            return false;
+        }
+        if (e.compareTo(node.e) == 0) {
+            return true;
+        } else if (e.compareTo(node.e) < 0) {
+            return contains(node.left, e);
+        } else {
+            return contains(node.right, e);
+        }
     }
 }
