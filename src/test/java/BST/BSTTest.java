@@ -20,14 +20,13 @@ public class BSTTest {
             bst.add(num);
         }
 
-        bst.preOrder();
-        System.out.println();
-        bst.preOrderNR();
+//        bst.preOrder();
+//        System.out.println();
+//        bst.preOrderNR();
+        bst.levelOrder();
 //        bst.inOrder();
 //        System.out.println();
 //        bst.postOrder();
-
-
 //        System.out.println(bst);
 
     }
