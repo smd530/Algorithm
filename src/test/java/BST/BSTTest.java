@@ -22,7 +22,10 @@ public class BSTTest {
 
         bst.preOrder();
         System.out.println();
-        System.out.println(bst);
+//        System.out.println(bst);
+        bst.inOrder();
+        System.out.println();
+        bst.postOrder();
     }
 
 }
