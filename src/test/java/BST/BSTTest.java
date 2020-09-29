@@ -22,10 +22,14 @@ public class BSTTest {
 
         bst.preOrder();
         System.out.println();
+        bst.preOrderNR();
+//        bst.inOrder();
+//        System.out.println();
+//        bst.postOrder();
+
+
 //        System.out.println(bst);
-        bst.inOrder();
-        System.out.println();
-        bst.postOrder();
+
     }
 
 }

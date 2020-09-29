@@ -2,6 +2,8 @@ package BST;
 
 import com.sun.org.apache.regexp.internal.RE;
 
+import java.util.Stack;
+
 /**
  * 二分搜索树
  * 存储的元素必须要有可比较性 所以要继承Comparable接口
@@ -163,6 +165,28 @@ public class BST<E extends Comparable<E>> {
         preOrder(node.left);
         preOrder(node.right);
     }
+
+    /**
+     * 二分搜索树非递归前序遍历
+     */
+    public void preOrderNR() {
+
+        Stack<Node> stack = new Stack<>();
+        stack.push(root);
+        while (!stack.empty()) {
+            Node cur = stack.pop();
+            System.out.println(cur.e);
+
+            if (cur.right != null) {
+                stack.push(cur.right);
+            }
+            if (cur.left != null) {
+                stack.push(cur.left);
+            }
+        }
+
+    }
+
 
     /**
      * 二分搜索树中序遍历
