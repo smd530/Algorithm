@@ -249,6 +249,84 @@ public class BST<E extends Comparable<E>> {
         }
     }
 
+    /**
+     * 查找二分搜索树最小值
+     * @return
+     */
+    public E minimum() {
+        if (size == 0) {
+            throw new IllegalArgumentException("BST is empty");
+        }
+        return minimumNR(root).e;
+    }
+
+    /**
+     * 递归实现查找以node为根的二分搜索树最小值
+     * @param node
+     * @return
+     */
+    private Node minimum(Node node) {
+        if (node.left == null) {
+            return node;
+        }
+        return minimum(node.left);
+    }
+
+    /**
+     * 非递归实现查找以node为根的二分搜索树最小值
+     * @param node
+     * @return
+     */
+    private Node minimumNR(Node node) {
+        if (node.left == null) {
+            return node;
+        }
+        Node cur = node;
+        while (cur.left != null) {
+            cur = cur.left;
+        }
+        return cur;
+    }
+
+    /**
+     * 查找二分搜索树的最大值
+     * @return
+     */
+    public E maximum() {
+        if (size == 0) {
+            throw new IllegalArgumentException("BST is empty");
+        }
+        return maximumNR(root).e;
+    }
+
+    /**
+     * 递归实现查找以node为根的二分搜索树最大值
+     * @param node
+     * @return
+     */
+    private Node maximum(Node node) {
+        if (node.right == null) {
+            return node;
+        }
+        return maximum(node.right);
+    }
+
+    /**
+     * 递归实现查找以node为根的二分搜索树最大值
+     * @param node
+     * @return
+     */
+    public Node maximumNR(Node node) {
+        if (node.right == null) {
+            return node;
+        }
+        Node cur = node;
+        while (cur.right != null) {
+            cur = cur.right;
+        }
+        return cur;
+    }
+
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();

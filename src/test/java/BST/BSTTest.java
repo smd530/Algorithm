@@ -23,11 +23,15 @@ public class BSTTest {
 //        bst.preOrder();
 //        System.out.println();
 //        bst.preOrderNR();
-        bst.levelOrder();
-//        bst.inOrder();
+//        bst.levelOrder();
+////        bst.inOrder();
+////        System.out.println();
+////        bst.postOrder();
+////        System.out.println(bst);
 //        System.out.println();
-//        bst.postOrder();
-//        System.out.println(bst);
+//        System.out.println(bst.minimum());
+//        System.out.println();
+        System.out.println(bst.maximum());
 
     }
 
