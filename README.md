@@ -52,7 +52,7 @@
 43. [多数元素](https://leetcode-cn.com/problems/majority-element/description/)
 44. [电话号码的字母组合](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
 45. [N-皇后](https://leetcode-cn.com/problems/n-queens/)
-
+46. [x的平方根](https://leetcode-cn.com/problems/sqrtx/solution/x-de-ping-fang-gen-by-leetcode-solution/)
 
 
 
