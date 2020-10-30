@@ -58,5 +58,8 @@ public class BinarySearch {
 
         System.out.println(binarySearch(arr, 6, 9));
 
+
     }
+
+
 }
