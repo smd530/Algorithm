@@ -42,6 +42,28 @@ public class RemoveNthNodeFromEndOfList {
      * 解法二
      */
 
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
 
+        if (n < 0) {
+            return null;
+        }
+        ListNode dummyHead = new ListNode(-1);
+        dummyHead.next = head;
+        ListNode p = dummyHead;
+        ListNode q = dummyHead;
+
+        for (int i = 0; i < n + 1; i++) {
+            q = q.next;
+        }
+
+        while (q != null) {
+            p = p.next;
+            q = q.next;
+        }
+
+        p.next = p.next.next;
+
+        return dummyHead.next;
+    }
 
 }
