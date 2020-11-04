@@ -2,7 +2,7 @@ package myleetcode;
 
 /**
  * 两数之合II lee 167
- * 二分
+ * 二分 对撞指针
  *
  * @author shanmingda
  * @date 2020-11-03 12:04
