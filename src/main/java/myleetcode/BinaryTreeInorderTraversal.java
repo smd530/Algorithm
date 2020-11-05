@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 中序遍历二叉树
+ * 中序遍历二叉树 lee 94
  *
  * @author shanmingda
  * @date 2020-09-17 16:30
@@ -14,9 +14,7 @@ import java.util.List;
 public class BinaryTreeInorderTraversal {
 
     public List<Integer> inorderTraversal(TreeNode root) {
-
-        // 方式一 递归
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<>();
         inorderTraversalRecursive(root, res);
         return res;
     }
