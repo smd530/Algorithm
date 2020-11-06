@@ -12,7 +12,7 @@ public class BubbleSort {
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             boolean flag = false;
-            for (int j = 0; j < n - 1; j++) {
+            for (int j = 0; j < n - i - 1; j++) {
                 int tem = 0;
                 if (nums[j] > nums[j + 1]) {
                     tem = nums[j];
@@ -33,7 +33,7 @@ public class BubbleSort {
     }
 
     public static void main(String[] args) {
-        int nums[] = {11, 3, 4, 6, 22, 9};
+        int nums[] = {11, 3, 4, 6, 22, 9, 1, 222};
         bubblueSort(nums);
     }
 }
