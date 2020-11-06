@@ -17,16 +17,26 @@ public class ValidParentheses {
         if (s.isEmpty()) {
             return true;
         }
+
         Stack<Character> stack = new Stack<>();
-        for (Character c : s.toCharArray()) {
-            if (c == '(') {
-                stack.push(')');
-            } else if (c == '[') {
-                stack.push(']');
-            } else if (c == '{') {
-                stack.push('}');
-            } else if (stack.isEmpty() || c != stack.pop()) {
-                return false;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else {
+                if (s.isEmpty()) {
+                    return false;
+                }
+                char topChar = stack.pop();
+                if (c == ')' && topChar != '(') {
+                    return false;
+                }
+                if (c == ']' && topChar != '[') {
+                    return false;
+                }
+                if (c == '}' && topChar != '{') {
+                    return false;
+                }
             }
         }
         return stack.isEmpty();

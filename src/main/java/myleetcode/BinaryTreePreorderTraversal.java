@@ -18,6 +18,11 @@ public class BinaryTreePreorderTraversal {
         return result;
     }
 
+    /**
+     * 递归写法
+     * @param node
+     * @param res
+     */
     public void preOrder(TreeNode node, List<Integer> res) {
         if (node == null) {
             return;
@@ -26,4 +31,8 @@ public class BinaryTreePreorderTraversal {
         preOrder(node.left, res);
         preOrder(node.right, res);
     }
+
+    /**
+     *
+     */
 }
