@@ -12,43 +12,33 @@ import java.util.PriorityQueue;
  */
 public class TopkFrequentElements {
 
-    public int[] topKFrequent(int[] nums, int k) {
-        Map<Integer, Integer> occurrences = new HashMap<Integer, Integer>();
+    public static int[] topKFrequent(int[] nums, int k) {
+
+        int res[] = new int[k];
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
-            occurrences.put(num, occurrences.getOrDefault(num, 0) + 1);
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+        PriorityQueue<Map.Entry<Integer, Integer>> maxHeap = new PriorityQueue<Map.Entry<Integer, Integer>>((a, b) -> b.getValue()-a.getValue());
+
+        for (Map.Entry<Integer, Integer> integerIntegerEntry : map.entrySet()) {
+            maxHeap.add(integerIntegerEntry);
         }
 
-        PriorityQueue<int[]> queue = new PriorityQueue<int[]>((int[] m, int[] n) -> {
-            return m[1] - n[1];
-
-        });
-        for (Map.Entry<Integer, Integer> entry : occurrences.entrySet()) {
-            int num = entry.getKey(), count = entry.getValue();
-            if (queue.size() == k) {
-                if (queue.peek()[1] < count) {
-                    queue.poll();
-                    queue.offer(new int[]{num, count});
-                }
-            } else {
-                queue.offer(new int[]{num, count});
-            }
+        for (int i = 0; i < k; i++) {
+            Map.Entry<Integer, Integer> poll = maxHeap.poll();
+            res[i] = poll.getKey();
         }
-        int[] ret = new int[k];
-        for (int i = 0; i < k; ++i) {
-            ret[i] = queue.poll()[0];
-        }
-        return ret;
+        return res;
     }
 
+    public static void main(String[] args) {
+        int nums[] = {1,1,1,2,2,3};
 
-    public void recursion(int level, int[] param) {
-        if (level > param.length) {
-            return;
-
+        int[] ints = topKFrequent(nums, 2);
+        for (int anInt : ints) {
+            System.out.println(anInt);
         }
-
-        recursion(level + 1, param);
-
     }
 
 

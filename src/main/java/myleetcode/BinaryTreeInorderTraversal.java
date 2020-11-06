@@ -29,4 +29,10 @@ public class BinaryTreeInorderTraversal {
     }
 
 
+    public void inOrder(TreeNode root) {
+        inOrder(root.left);
+        System.out.println(root.val);
+        inOrder(root.right);
+    }
+
 }
